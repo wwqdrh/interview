@@ -1,0 +1,18 @@
+[book]
+authors = ["wwqdrh"]
+language = "zh"
+multilingual = false
+src = "src"
+
+[build]
+build-dir = "build"
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
+
+[output.html]
+default-theme = "light"
+additional-css = ['./theme/style.css', "./theme/mdbook-admonish.css"]
+additional-js = ['./theme/style.js', "./theme/highlight.js"]
+git-repository-url = "https://github.com/wwqdrh/interview-book"
