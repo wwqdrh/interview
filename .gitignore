@@ -1,5 +1,8 @@
 build
+cache
 .DS_Store
+.cache
+out
 .vscode
 # Prerequisites
 *.d
