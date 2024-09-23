@@ -115,21 +115,14 @@
 
 一个升序数组，找到其中的两个元素和为目标值，返回其目标下标。同一个数字不能使用两次，并且题目要求一定会存在满足条件的答案。
 
-```go
-func twoSum(numbers []int, target int) []int {
-    low, high := 0, len(numbers) - 1
-    for low < high {
-        sum := numbers[low] + numbers[high]
-        if sum == target {
-            return []int{low, high}
-        } else if sum < target {
-            low++
-        } else {
-            high--
-        }
-    }
-    return []int{-1, -1}
-}
+
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/target_twosum.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/target_twosum.go}}
+<<<<<
 ```
 
 ## 7、
@@ -143,43 +136,14 @@ func twoSum(numbers []int, target int) []int {
 - 先进行排序，优化搜索条件
 - 记得跳过相同的值，即相同的一段，只计算第一个进行剪枝。
 
-```go
-func threeSum(nums []int) [][]int {
-    n := len(nums)
-    sort.Ints(nums)
-    ans := make([][]int, 0)
- 
-    // 枚举 a
-    for first := 0; first < n; first++ {
-        // 需要和上一次枚举的数不相同
-        if first > 0 && nums[first] == nums[first - 1] {
-            continue
-        }
-        // c 对应的指针初始指向数组的最右端
-        third := n - 1
-        target := -1 * nums[first]
-        // 枚举 b
-        for second := first + 1; second < n; second++ {
-            // 需要和上一次枚举的数不相同
-            if second > first + 1 && nums[second] == nums[second - 1] {
-                continue
-            }
-            // 需要保证 b 的指针在 c 的指针的左侧
-            for second < third && nums[second] + nums[third] > target {
-                third--
-            }
-            // 如果指针重合，随着 b 后续的增加
-            // 就不会有满足 a+b+c=0 并且 b<c 的 c 了，可以退出循环
-            if second == third {
-                break
-            }
-            if nums[second] + nums[third] == target {
-                ans = append(ans, []int{nums[first], nums[second], nums[third]})
-            }
-        }
-    }
-    return ans
-}
+
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/zero_threesum.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/zero_threesum.go}}
+<<<<<
 ```
 
 ## 8、
@@ -192,36 +156,14 @@ func threeSum(nums []int) [][]int {
 
 - 滑动窗口: 计算满足和大于目标值的最短子数组长度
 
-```go
-func minSubArrayLen(s int, nums []int) int {
-    n := len(nums)
-    if n == 0 {
-        return 0
-    }
-    ans := math.MaxInt32
-    start, end := 0, 0
-    sum := 0
-    for end < n {
-        sum += nums[end]
-        for sum >= s {
-            ans = min(ans, end - start + 1)
-            sum -= nums[start]
-            start++
-        }
-        end++
-    }
-    if ans == math.MaxInt32 {
-        return 0
-    }
-    return ans
-}
 
-func min(x, y int) int {
-    if x < y {
-        return x
-    }
-    return y
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/short_subarr.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/short_subarr.go}}
+<<<<<
 ```
 
 ## 9、
@@ -230,18 +172,14 @@ func min(x, y int) int {
 
 给定一个数组，寻找其中满足数组乘积小于k的子数组的个数
 
-```go
-func numSubarrayProductLessThanK(nums []int, k int) (ans int) {
-    prod, i := 1, 0
-    for j, num := range nums {
-        prod *= num
-        for ; i <= j && prod >= k; i++ {
-            prod /= nums[i]
-        }
-        ans += j - i + 1
-    }
-    return
-}
+
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/mul_lessk_subarr.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/mul_lessk_subarr.go}}
+<<<<<
 ```
 
 ## 10、
@@ -254,20 +192,14 @@ func numSubarrayProductLessThanK(nums []int, k int) (ans int) {
 
 - 数组和在计算过程中需要记录下来，并且同时计算该数组和对应的个数
 
-```go
-func subarraySum(nums []int, k int) int {
-    count, pre := 0, 0
-    m := map[int]int{}
-    m[0] = 1
-    for i := 0; i < len(nums); i++ {
-        pre += nums[i]
-        if _, ok := m[pre - k]; ok {
-            count += m[pre - k]
-        }
-        m[pre] += 1
-    }
-    return count
-} 
+
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/sumk_subarr.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/sumk_subarr.go}}
+<<<<<
 ```
 
 ## 11、
@@ -280,31 +212,13 @@ func subarraySum(nums []int, k int) int {
 
 - 使用map记录某个前缀和最左边的下标是多少
 
-```go
-func findMaxLength(nums []int) (maxLength int) {
-    mp := map[int]int{0: -1}
-    counter := 0
-    for i, num := range nums {
-        if num == 1 {
-            counter++
-        } else {
-            counter--
-        }
-        if prevIndex, has := mp[counter]; has {
-            maxLength = max(maxLength, i-prevIndex)
-        } else {
-            mp[counter] = i
-        }
-    }
-    return
-}
-
-func max(a, b int) int {
-    if a > b {
-        return a
-    }
-    return b
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/onezero_same_long.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/onezero_same_long.go}}
+<<<<<
 ```
 
 ## 12、
@@ -317,21 +231,13 @@ func max(a, b int) int {
 
 - 判断`2 * 前缀和 + 当前值`是否等于数组总和
 
-```go
-func pivotIndex(nums []int) int {
-    total := 0
-    for _, v := range nums {
-        total += v
-    }
-    sum := 0
-    for i, v := range nums {
-        if 2*sum+v == total {
-            return i
-        }
-        sum += v
-    }
-    return -1
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/sep_two_array.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/sep_two_array.go}}
+<<<<<
 ```
 
 ## 13、
@@ -344,31 +250,14 @@ func pivotIndex(nums []int) int {
 
 - 预处理(0,0)到(i,j)的子数组的和
 
-```go
-type NumMatrix struct {
-    sums [][]int
-}
 
-func Constructor(matrix [][]int) NumMatrix {
-    m := len(matrix)
-    if m == 0 {
-        return NumMatrix{}
-    }
-    n := len(matrix[0])
-    sums := make([][]int, m+1)
-    sums[0] = make([]int, n+1)
-    for i, row := range matrix {
-        sums[i+1] = make([]int, n+1)
-        for j, v := range row {
-            sums[i+1][j+1] = sums[i+1][j] + sums[i][j+1] - sums[i][j] + v
-        }
-    }
-    return NumMatrix{sums}
-}
-
-func (nm *NumMatrix) SumRegion(row1, col1, row2, col2 int) int {
-    return nm.sums[row2+1][col2+1] - nm.sums[row1][col2+1] - nm.sums[row2+1][col1] + nm.sums[row1][col1]
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/2matrix_sum.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/2matrix_sum.go}}
+<<<<<
 ```
 
 ## 14、
@@ -381,30 +270,13 @@ func (nm *NumMatrix) SumRegion(row1, col1, row2, col2 int) int {
 
 - 使用26长度的数组来保存字符情况
 
-```go
-func checkInclusion(s1, s2 string) bool {
-    n, m := len(s1), len(s2)
-    if n > m {
-        return false
-    }
-    cnt := [26]int{}
-    for _, ch := range s1 {
-        cnt[ch-'a']--
-    }
-    left := 0
-    for right, ch := range s2 {
-        x := ch - 'a'
-        cnt[x]++
-        for cnt[x] > 0 {
-            cnt[s2[left]-'a']--
-            left++
-        }
-        if right-left+1 == n {
-            return true
-        }
-    }
-    return false
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/check_nosort_substr.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/check_nosort_substr.go}}
+<<<<<
 ```
 
 ## 15、
@@ -418,31 +290,13 @@ func checkInclusion(s1, s2 string) bool {
 - 26位长度数组
 - 滑动窗口
 
-```go
-func findAnagrams(s, p string) (ans []int) {
-    sLen, pLen := len(s), len(p)
-    if sLen < pLen {
-        return
-    }
-
-    var sCount, pCount [26]int
-    for i, ch := range p {
-        sCount[s[i]-'a']++
-        pCount[ch-'a']++
-    }
-    if sCount == pCount {
-        ans = append(ans, 0)
-    }
-
-    for i, ch := range s[:sLen-pLen] {
-        sCount[ch-'a']--
-        sCount[s[i+pLen]-'a']++
-        if sCount == pCount {
-            ans = append(ans, i+1)
-        }
-    }
-    return
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/all_nosort_substr.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/all_nosort_substr.go}}
+<<<<<
 ```
 
 ## 16、
