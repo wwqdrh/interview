@@ -309,35 +309,14 @@
 
 - 滑动窗口，记录在窗口中字符的个数
 
-```go
-func lengthOfLongestSubstring(s string) int {
-    // 哈希集合，记录每个字符是否出现过
-    m := map[byte]int{}
-    n := len(s)
-    // 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
-    rk, ans := -1, 0
-    for i := 0; i < n; i++ {
-        if i != 0 {
-            // 左指针向右移动一格，移除一个字符
-            delete(m, s[i-1])
-        }
-        for rk + 1 < n && m[s[rk+1]] == 0 {
-            // 不断地移动右指针
-            m[s[rk+1]]++
-            rk++
-        }
-        // 第 i 到 rk 个字符是一个极长的无重复字符子串
-        ans = max(ans, rk - i + 1)
-    }
-    return ans
-}
 
-func max(x, y int) int {
-    if x < y {
-        return y
-    }
-    return x
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/norepeat_long_substr.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/norepeat_long_substr.go}}
+<<<<<
 ```
 
 ## 17、
@@ -346,45 +325,14 @@ func max(x, y int) int {
 
 给定两个字符串s和t，找到s中的一个最短字符串，包含t的所有字符，如果不存在这样的子字符串，则返回空字符串
 
-```go
-func minWindow(s string, t string) string {
-    ori, cnt := map[byte]int{}, map[byte]int{}
-    for i := 0; i < len(t); i++ {
-        ori[t[i]]++
-    }
 
-    sLen := len(s)
-    len := math.MaxInt32
-    ansL, ansR := -1, -1
-
-    check := func() bool {
-        for k, v := range ori {
-            if cnt[k] < v {
-                return false
-            }
-        }
-        return true
-    }
-    for l, r := 0, 0; r < sLen; r++ {
-        if r < sLen && ori[s[r]] > 0 {
-            cnt[s[r]]++
-        }
-        for check() && l <= r {
-            if (r - l + 1 < len) {
-                len = r - l + 1
-                ansL, ansR = l, l + len
-            }
-            if _, ok := ori[s[l]]; ok {
-                cnt[s[l]] -= 1
-            }
-            l++
-        }
-    }
-    if ansL == -1 {
-        return ""
-    }
-    return s[ansL:ansR]
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/allch_short_substr.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/allch_short_substr.go}}
+<<<<<
 ```
 
 ## 18、
@@ -393,28 +341,13 @@ func minWindow(s string, t string) string {
 
 给定一个字符串，验证是否是回文字符串, 只考虑字母和数字字符，可以忽略字母的大小写。
 
-```go
-func isPalindrome(s string) bool {
-    var sgood string
-    for i := 0; i < len(s); i++ {
-        if isalnum(s[i]) {
-            sgood += string(s[i])
-        }
-    }
-
-    n := len(sgood)
-    sgood = strings.ToLower(sgood)
-    for i := 0; i < n/2; i++ {
-        if sgood[i] != sgood[n-1-i] {
-            return false
-        }
-    }
-    return true
-}
-
-func isalnum(ch byte) bool {
-    return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9')
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/check_palindrome.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/check_palindrome.go}}
+<<<<<
 ```
 
 ## 19、
@@ -423,32 +356,14 @@ func isalnum(ch byte) bool {
 
 给定一个字符串，删除其中一个字符判断是否是回文
 
-```go
-func validPalindrome(s string) bool {
-    low, high := 0, len(s) - 1
-    for low < high {
-        if s[low] == s[high] {
-            low++
-            high--
-        } else {
-            flag1, flag2 := true, true
-            for i, j := low, high - 1; i < j; i, j = i + 1, j - 1 {
-                if s[i] != s[j] {
-                    flag1 = false
-                    break
-                }
-            }
-            for i, j := low + 1, high; i < j; i, j = i + 1, j - 1 {
-                if s[i] != s[j] {
-                    flag2 = false
-                    break
-                }
-            }
-            return flag1 || flag2
-        }
-    }
-    return true
-}
+
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/check_delone_palindrome.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/check_delone_palindrome.go}}
+<<<<<
 ```
 
 ## 20、
@@ -457,20 +372,13 @@ func validPalindrome(s string) bool {
 
 计算一个字符串中有多少个回文子字符串
 
-```go
-func countSubstrings(s string) int {
-    n := len(s)
-    ans := 0
-    for i := 0; i < 2 * n - 1; i++ {
-        l, r := i / 2, i / 2 + i % 2
-        for l >= 0 && r < n && s[l] == s[r] {
-            l--
-            r++
-            ans++
-        }
-    }
-    return ans
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/cnt_palindrome_substr.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/cnt_palindrome_substr.go}}
+<<<<<
 ```
 
 ## 21、
@@ -483,19 +391,13 @@ func countSubstrings(s string) int {
 
 - 快慢指针
 
-```go
-func removeNthFromEnd(head *ListNode, n int) *ListNode {
-    dummy := &ListNode{0, head}
-    first, second := head, dummy
-    for i := 0; i < n; i++ {
-        first = first.Next
-    }
-    for ; first != nil; first = first.Next {
-        second = second.Next
-    }
-    second.Next = second.Next.Next
-    return dummy.Next
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/linklist_delone.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/linklist_delone.go}}
+<<<<<
 ```
 
 ## 22、
@@ -508,26 +410,13 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
 - 快慢指针，当相遇了之后从当前以及初始位置以相同速度前进，当再次相遇就是环的入口
 
-```go
-func detectCycle(head *ListNode) *ListNode {
-    slow, fast := head, head
-    for fast != nil {
-        slow = slow.Next
-        if fast.Next == nil {
-            return nil
-        }
-        fast = fast.Next.Next
-        if fast == slow {
-            p := head
-            for p != slow {
-                p = p.Next
-                slow = slow.Next
-            }
-            return p
-        }
-    }
-    return nil
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/linklist_circlepoint.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/linklist_circlepoint.go}}
+<<<<<
 ```
 
 ## 23、
@@ -540,26 +429,14 @@ func detectCycle(head *ListNode) *ListNode {
 
 - 链表走完了之后到另外一个上，这样到达相交节点的节点数相同，是会相遇的
 
-```go
-func getIntersectionNode(headA, headB *ListNode) *ListNode {
-    if headA == nil || headB == nil {
-        return nil
-    }
-    pa, pb := headA, headB
-    for pa != pb {
-        if pa == nil {
-            pa = headB
-        } else {
-            pa = pa.Next
-        }
-        if pb == nil {
-            pb = headA
-        } else {
-            pb = pb.Next
-        }
-    }
-    return pa
-}
+
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/linklist_common_point.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/linklist_common_point.go}}
+<<<<<
 ```
 
 ## 24、
@@ -568,16 +445,13 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 
 给定一个链式结构，反转后返回其头节点
 
-```go
-func reverseList(head *ListNode) *ListNode {
-    if head == nil || head.Next == nil {
-        return head
-    }
-    newHead := reverseList(head.Next)
-    head.Next.Next = head
-    head.Next = nil
-    return newHead
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/linklist_reverse.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/linklist_reverse.go}}
+<<<<<
 ```
 
 ## 25、
@@ -590,36 +464,13 @@ func reverseList(head *ListNode) *ListNode {
 
 - 将链表转为数组，然后计算完后进行重新构造成链表
 
-```go
-func addTwoNumbers(l1 *ListNode, l2 *ListNode) (head *ListNode) {
-    var s1, s2 []int
-    for l1 != nil{
-        s1 = append(s1, l1.Val)
-        l1 = l1.Next
-    }
-    for l2 != nil{
-        s2 = append(s2, l2.Val)
-        l2 = l2.Next
-    }
-    carry := 0
-    for len(s1) > 0 || len(s2) > 0 || carry > 0{
-        sum := 0
-        if len(s1) > 0{
-            sum += s1[len(s1)-1]
-            s1 = s1[:len(s1)-1]
-        }
-        if len(s2) > 0{
-            sum += s2[len(s2)-1]
-            s2 = s2[:len(s2)-1]
-        }
-        sum += carry
-        node := &ListNode{Val:sum%10}
-        node.Next = head
-        head = node
-        carry = sum / 10
-    }
-    return
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/linklist_add.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/linklist_add.go}}
+<<<<<
 ```
 
 ## 26、
@@ -628,27 +479,13 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) (head *ListNode) {
 
 给定一个链表结构，原始为'1 2 3 4 5 6 ... n-1 n' 修改为'1 n 2 n-1 3 n-2 ...'
 
-```go
-func reorderList(head *ListNode) {
-    if head == nil {
-        return
-    }
-    nodes := []*ListNode{}
-    for node := head; node != nil; node = node.Next {
-        nodes = append(nodes, node)
-    }
-    i, j := 0, len(nodes)-1
-    for i < j {
-        nodes[i].Next = nodes[j]
-        i++
-        if i == j {
-            break
-        }
-        nodes[j].Next = nodes[i]
-        j--
-    }
-    nodes[i].Next = nil
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/linklist_x_sort.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/linklist_x_sort.go}}
+<<<<<
 ```
 
 ## 27、
@@ -657,20 +494,13 @@ func reorderList(head *ListNode) {
 
 给定一个链表结构，判断该链表是否是回文
 
-```go
-func isPalindrome(head *ListNode) bool {
-    vals := []int{}
-    for ; head != nil; head = head.Next {
-        vals = append(vals, head.Val)
-    }
-    n := len(vals)
-    for i, v := range vals[:n/2] {
-        if v != vals[n-1-i] {
-            return false
-        }
-    }
-    return true
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/linklist_palindrome.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/linklist_palindrome.go}}
+<<<<<
 ```
 
 ## 28、
@@ -681,41 +511,13 @@ func isPalindrome(head *ListNode) bool {
 
 这里多级双向链表就是包含前后指针，还包含子链表的指针，(其实就相当于链表)
 
-```go
-func dfs(node *Node) (last *Node) {
-    cur := node
-    for cur != nil {
-        next := cur.Next
-        // 如果有子节点，那么首先处理子节点
-        if cur.Child != nil {
-            childLast := dfs(cur.Child)
-
-            next = cur.Next
-            // 将 node 与 child 相连
-            cur.Next = cur.Child
-            cur.Child.Prev = cur
-
-            // 如果 next 不为空，就将 last 与 next 相连
-            if next != nil {
-                childLast.Next = next
-                next.Prev = childLast
-            }
-
-            // 将 child 置为空
-            cur.Child = nil
-            last = childLast
-        } else {
-            last = cur
-        }
-        cur = next
-    }
-    return
-}
-
-func flatten(root *Node) *Node {
-    dfs(root)
-    return root
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/linklist_flatten.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/linklist_flatten.go}}
+<<<<<
 ```
 
 ## 29、
@@ -729,35 +531,13 @@ func flatten(root *Node) *Node {
 - 第一种情况 `cur.val <= val <= next.val`, 直接插入到这里
 - 第二种情况 `cur.val > next.val`, 说明是链表遍历完了，break，直接加入到cur的后面
 
-```go
-func insert(head *Node, insertVal int) *Node {
-    node := &Node{Val: insertVal}
-    if head == nil {
-        node.Next = node
-        return node
-    }
-    if head.Next == head {
-        head.Next = node
-        node.Next = head
-        return head
-    }
-    curr, next := head, head.Next
-    for next != head {
-        if insertVal >= curr.Val && insertVal <= next.Val {
-            break
-        }
-        if curr.Val > next.Val {
-            if insertVal > curr.Val || insertVal < next.Val {
-                break
-            }
-        }
-        curr = curr.Next
-        next = next.Next
-    }
-    curr.Next = node
-    node.Next = next
-    return head
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/linklist_sort_insert.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/linklist_sort_insert.go}}
+<<<<<
 ```
 
 ## 30、
@@ -772,41 +552,11 @@ func insert(head *Node, insertVal int) *Node {
 - 插入和删除也需要O(1), 使用map来存储值与下标
 - 当删除的时候，将末尾的一个移动到要删除的位置并且更新下对应下标，然后数组只需要减一个长度即可
 
-```go
-type RandomizedSet struct {
-    nums    []int
-    indices map[int]int
-}
-
-func Constructor() RandomizedSet {
-    return RandomizedSet{
-        []int{}, map[int]int{},
-    }
-}
-
-func (rs *RandomizedSet) Insert(val int) bool {
-    if _, ok := rs.indices[val]; ok {
-        return false
-    }
-    rs.indices[val] = len(rs.nums)
-    rs.nums = append(rs.nums, val)
-    return true
-}
-
-func (rs *RandomizedSet) Remove(val int) bool {
-    id, ok := rs.indices[val]
-    if !ok {
-        return false
-    }
-    last := len(rs.nums) - 1
-    rs.nums[id] = rs.nums[last]
-    rs.indices[rs.nums[id]] = id
-    rs.nums = rs.nums[:last]
-    delete(rs.indices, val)
-    return true
-}
-
-func (rs *RandomizedSet) GetRandom() int {
-    return rs.nums[rand.Intn(len(rs.nums))]
-}
+```multicode
+>>>>> cpp
+{{#include ../../../code/algo/getoffer/c++/container_o1.cpp}}
+<<<<<
+>>>>> go
+{{#include ../../../code/algo/getoffer/go/container_o1.go}}
+<<<<<
 ```
