@@ -8,4 +8,4 @@ set(CMAKE_BUILD_TYPE Debug)
 # set(CMAKE_C_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g")
 set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g")
 
-add_subdirectory(code/algo/getoffer/c++)
+add_subdirectory(code/algo/getoffer/c++/1)

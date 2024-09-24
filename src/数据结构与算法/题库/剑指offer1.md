@@ -20,10 +20,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/intdevide.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/intdevide.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/intdevide.go}}
+{{#include ../../../code/algo/getoffer/go/1/intdevide.go}}
 <<<<<
 ```
 
@@ -39,10 +39,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/bstradd.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/bstradd.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/bstradd.go}}
+{{#include ../../../code/algo/getoffer/go/1/bstradd.go}}
 <<<<<
 ```
 
@@ -59,10 +59,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/bitcount.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/bitcount.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/bitcount.go}}
+{{#include ../../../code/algo/getoffer/go/1/bitcount.go}}
 <<<<<
 ```
 
@@ -81,10 +81,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/foundonetime.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/foundonetime.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/foundonetime.go}}
+{{#include ../../../code/algo/getoffer/go/1/foundonetime.go}}
 <<<<<
 ```
 
@@ -102,10 +102,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/unistr_maxlen.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/unistr_maxlen.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/unistr_maxlen.go}}
+{{#include ../../../code/algo/getoffer/go/1/unistr_maxlen.go}}
 <<<<<
 ```
 
@@ -118,10 +118,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/target_twosum.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/target_twosum.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/target_twosum.go}}
+{{#include ../../../code/algo/getoffer/go/1/target_twosum.go}}
 <<<<<
 ```
 
@@ -139,10 +139,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/zero_threesum.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/zero_threesum.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/zero_threesum.go}}
+{{#include ../../../code/algo/getoffer/go/1/zero_threesum.go}}
 <<<<<
 ```
 
@@ -159,10 +159,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/short_subarr.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/short_subarr.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/short_subarr.go}}
+{{#include ../../../code/algo/getoffer/go/1/short_subarr.go}}
 <<<<<
 ```
 
@@ -175,10 +175,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/mul_lessk_subarr.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/mul_lessk_subarr.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/mul_lessk_subarr.go}}
+{{#include ../../../code/algo/getoffer/go/1/mul_lessk_subarr.go}}
 <<<<<
 ```
 
@@ -195,10 +195,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/sumk_subarr.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/sumk_subarr.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/sumk_subarr.go}}
+{{#include ../../../code/algo/getoffer/go/1/sumk_subarr.go}}
 <<<<<
 ```
 
@@ -214,10 +214,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/onezero_same_long.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/onezero_same_long.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/onezero_same_long.go}}
+{{#include ../../../code/algo/getoffer/go/1/onezero_same_long.go}}
 <<<<<
 ```
 
@@ -233,10 +233,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/sep_two_array.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/sep_two_array.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/sep_two_array.go}}
+{{#include ../../../code/algo/getoffer/go/1/sep_two_array.go}}
 <<<<<
 ```
 
@@ -253,10 +253,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/2matrix_sum.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/2matrix_sum.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/2matrix_sum.go}}
+{{#include ../../../code/algo/getoffer/go/1/2matrix_sum.go}}
 <<<<<
 ```
 
@@ -272,10 +272,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/check_nosort_substr.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/check_nosort_substr.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/check_nosort_substr.go}}
+{{#include ../../../code/algo/getoffer/go/1/check_nosort_substr.go}}
 <<<<<
 ```
 
@@ -292,10 +292,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/all_nosort_substr.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/all_nosort_substr.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/all_nosort_substr.go}}
+{{#include ../../../code/algo/getoffer/go/1/all_nosort_substr.go}}
 <<<<<
 ```
 
@@ -312,10 +312,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/norepeat_long_substr.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/norepeat_long_substr.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/norepeat_long_substr.go}}
+{{#include ../../../code/algo/getoffer/go/1/norepeat_long_substr.go}}
 <<<<<
 ```
 
@@ -328,10 +328,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/allch_short_substr.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/allch_short_substr.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/allch_short_substr.go}}
+{{#include ../../../code/algo/getoffer/go/1/allch_short_substr.go}}
 <<<<<
 ```
 
@@ -343,10 +343,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/check_palindrome.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/check_palindrome.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/check_palindrome.go}}
+{{#include ../../../code/algo/getoffer/go/1/check_palindrome.go}}
 <<<<<
 ```
 
@@ -359,10 +359,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/check_delone_palindrome.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/check_delone_palindrome.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/check_delone_palindrome.go}}
+{{#include ../../../code/algo/getoffer/go/1/check_delone_palindrome.go}}
 <<<<<
 ```
 
@@ -374,10 +374,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/cnt_palindrome_substr.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/cnt_palindrome_substr.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/cnt_palindrome_substr.go}}
+{{#include ../../../code/algo/getoffer/go/1/cnt_palindrome_substr.go}}
 <<<<<
 ```
 
@@ -393,10 +393,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/linklist_delone.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/linklist_delone.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/linklist_delone.go}}
+{{#include ../../../code/algo/getoffer/go/1/linklist_delone.go}}
 <<<<<
 ```
 
@@ -412,10 +412,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/linklist_circlepoint.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/linklist_circlepoint.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/linklist_circlepoint.go}}
+{{#include ../../../code/algo/getoffer/go/1/linklist_circlepoint.go}}
 <<<<<
 ```
 
@@ -432,10 +432,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/linklist_common_point.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/linklist_common_point.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/linklist_common_point.go}}
+{{#include ../../../code/algo/getoffer/go/1/linklist_common_point.go}}
 <<<<<
 ```
 
@@ -447,10 +447,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/linklist_reverse.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/linklist_reverse.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/linklist_reverse.go}}
+{{#include ../../../code/algo/getoffer/go/1/linklist_reverse.go}}
 <<<<<
 ```
 
@@ -466,10 +466,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/linklist_add.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/linklist_add.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/linklist_add.go}}
+{{#include ../../../code/algo/getoffer/go/1/linklist_add.go}}
 <<<<<
 ```
 
@@ -481,10 +481,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/linklist_x_sort.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/linklist_x_sort.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/linklist_x_sort.go}}
+{{#include ../../../code/algo/getoffer/go/1/linklist_x_sort.go}}
 <<<<<
 ```
 
@@ -496,10 +496,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/linklist_palindrome.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/linklist_palindrome.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/linklist_palindrome.go}}
+{{#include ../../../code/algo/getoffer/go/1/linklist_palindrome.go}}
 <<<<<
 ```
 
@@ -513,10 +513,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/linklist_flatten.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/linklist_flatten.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/linklist_flatten.go}}
+{{#include ../../../code/algo/getoffer/go/1/linklist_flatten.go}}
 <<<<<
 ```
 
@@ -533,10 +533,10 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/linklist_sort_insert.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/linklist_sort_insert.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/linklist_sort_insert.go}}
+{{#include ../../../code/algo/getoffer/go/1/linklist_sort_insert.go}}
 <<<<<
 ```
 
@@ -554,9 +554,9 @@
 
 ```multicode
 >>>>> cpp
-{{#include ../../../code/algo/getoffer/c++/container_o1.cpp}}
+{{#include ../../../code/algo/getoffer/c++/1/container_o1.cpp}}
 <<<<<
 >>>>> go
-{{#include ../../../code/algo/getoffer/go/container_o1.go}}
+{{#include ../../../code/algo/getoffer/go/1/container_o1.go}}
 <<<<<
 ```
