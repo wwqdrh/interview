@@ -1,6 +1,7 @@
-```c++
-{{#include ../../public/code/algo/lru.cpp}}
-```
+And now, a _quiz_:
+
+{{#quiz ../../public/quiz/c++/1.toml}}
+
 
 - volatile static const extern等关键字
 - 宏定义和展开、内联函数区别
