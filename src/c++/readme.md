@@ -5,8 +5,6 @@ And now, a _quiz_:
 
 - volatile static const extern等关键字
 - 宏定义和展开、内联函数区别
-- 常用库函数实现
-- malloc,strcpy,strcmp的实现，常用库函数实现，哪些库函数属于高危函数
 - STL原理及实现
 - 什么是虚函数
 - 指针
