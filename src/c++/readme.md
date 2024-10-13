@@ -1,7 +1,12 @@
+# c++高手计划
+
+从零开始，跟随教程，成为一个c++开发高手
+
+从基础语法到底层原理到高级技巧，最后到应用实战，全方位进行训练
+
 And now, a _quiz_:
 
 {{#quiz ../../public/quiz/c++/1.toml}}
-
 
 - volatile static const extern等关键字
 - 宏定义和展开、内联函数区别

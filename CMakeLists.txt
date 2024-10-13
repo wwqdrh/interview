@@ -10,3 +10,4 @@ set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g")
 
 add_subdirectory(code/algo/getoffer/c++/1)
 add_subdirectory(code/linuxsystem/stat)
+add_subdirectory(code/standalone/c++)
