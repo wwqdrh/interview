@@ -27,8 +27,11 @@
   - [cpu资源](./linux操作系统/cpu资源.md)
   - [内存资源](./linux操作系统/内存资源.md)
   - [磁盘资源](./linux操作系统/磁盘资源.md)
+  - [常用操作](./linux操作系统/常用操作.md)
   - [进程结构与调度](./linux操作系统/进程结构与调度.md)
   - [内存管理](./linux操作系统/内存管理.md)
   - [资源管理](./linux操作系统/资源管理.md)
   - [网络配置](./linux操作系统/网络配置.md)
-  
+- [中间件](./中间件/readme.md)
+  - [mysql](./中间件/mysql/readme.md)
+  - [redis](./中间件/redis/readme.md)

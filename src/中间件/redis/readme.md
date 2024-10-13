@@ -1,0 +1,10 @@
+- 使用Redis有哪些好处？
+- redis相比memcached有哪些优势？
+- redis常见性能问题和解决方案
+- MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据
+- Memcache与Redis的区别都有哪些？
+- Redis 常见的性能问题都有哪些？如何解决？
+- redis 最适合的场景
+- Redis的同步机制了解么？
+- 是否使用过Redis集群，集群的原理是什么？
+- redis集群如何保证一致性？
